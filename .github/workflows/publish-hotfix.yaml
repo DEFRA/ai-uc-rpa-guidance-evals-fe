@@ -3,6 +3,11 @@ name: Publish Hot Fix
 on:
   workflow_dispatch:
 
+concurrency:
+  group: $${{ github.workflow }}
+  cancel-in-progress: false
+  queue: max
+
 permissions:
   id-token: write
   contents: write
