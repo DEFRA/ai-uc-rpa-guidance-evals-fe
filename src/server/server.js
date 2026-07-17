@@ -73,6 +73,7 @@ async function createServer () {
   })
 
   const plugins = [
+    contentSecurityPolicy,
     requestTracing,
     metrics,
     secureContext,
@@ -84,12 +85,6 @@ async function createServer () {
     viewPlugin,
     router
   ]
-
-  // Disable the content security policy plugin if the CDP Uploader browser URL
-  // is configured for local development (browser posts directly to an external origin)
-  if (!config.get('cdpUploader.browserUrl')) {
-    plugins.push(contentSecurityPolicy)
-  }
 
   await server.register(plugins)
 

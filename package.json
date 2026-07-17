@@ -16,6 +16,7 @@
     "server:watch": "nodemon --env-file-if-exists=.env --watch src --watch .public --ext js,njk,yaml,json --ignore src/client --exec 'node --env-file-if-exists=.env --use-strict ./src/index.js'",
     "lint": "run-s lint:js lint:scss",
     "lint:js": "eslint .",
+    "lint:js:fix": "eslint . --fix",
     "lint:scss": "stylelint \"src/**/*.scss\" --cache --cache-location .cache/stylelint --cache-strategy content --color --ignore-path .gitignore",
     "test": "TZ=UTC run-s lint build test:js",
     "test:js": "TZ=UTC vitest run --coverage"
