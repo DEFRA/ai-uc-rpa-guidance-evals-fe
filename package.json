@@ -13,7 +13,7 @@
     "build:watch": "vite build --watch",
     "start": "NODE_ENV=production node --env-file-if-exists=.env --use-strict ./src/index.js",
     "start:dev": "NODE_ENV=development run-p build:watch server:watch",
-    "server:watch": "nodemon --env-file-if-exists=.env --watch src --watch .public --ext js,njk,yaml,json --ignore src/client --exec 'node --env-file-if-exists=.env --use-strict ./src/index.js'",
+    "server:watch": "mkdir -p .public && node --env-file-if-exists=.env --use-strict --watch-preserve-output --watch-path=src/config --watch-path=src/constants --watch-path=src/health-probe --watch-path=src/infra --watch-path=src/pages --watch-path=src/server --watch-path=src/index.js --watch-path=.public ./src/index.js",
     "lint": "run-s lint:js lint:scss",
     "lint:js": "eslint .",
     "lint:js:fix": "eslint . --fix",
@@ -45,7 +45,7 @@
     "hapi-pino": "13.0.0",
     "hapi-pulse": "4.0.0",
     "ioredis": "5.11.1",
-    "joi": "18.2.3",
+    "joi": "18.2.9",
     "lodash": "4.18.1",
     "marked": "18.0.5",
     "node-fetch": "3.3.2",
@@ -63,21 +63,26 @@
     "eslint": "9.39.2",
     "neostandard": "0.13.0",
     "nock": "14.0.16",
-    "nodemon": "3.1.14",
     "npm-run-all2": "9.0.2",
     "postcss-load-config": "6.0.1",
     "postcss-loader": "8.2.1",
     "sass-embedded": "1.105.1",
     "sass-loader": "17.0.1",
-    "sharp": "0.35.3",
+    "sharp": "0.35.5",
     "source-map-loader": "5.0.0",
     "stylelint": "17.14.0",
     "stylelint-config-gds": "3.0.0",
-    "vite": "8.1.4",
+    "vite": "8.1.6",
     "vitest": "5.0.5",
     "vitest-fetch-mock": "0.4.5"
   },
   "overrides": {
-    "joi": "18.2.3"
+    "joi": "18.2.9",
+    "blankie": {
+      "@hapi/joi": "npm:joi@18.2.9"
+    },
+    "nunjucks": {
+      "chokidar": "5.0.0"
+    }
   }
 }
