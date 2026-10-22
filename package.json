@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@vitest/coverage-v8": "5.0.5",
-    "autoprefixer": "10.5.3",
+    "autoprefixer": "10.6.1",
     "cssnano": "8.0.2",
     "cssnano-preset-default": "8.0.2",
     "eslint": "9.39.2",
