@@ -63,7 +63,7 @@
     "eslint": "9.39.2",
     "neostandard": "0.13.0",
     "nock": "14.0.16",
-    "npm-run-all2": "9.0.3",
+    "npm-run-all2": "9.0.4",
     "postcss-load-config": "6.0.1",
     "postcss-loader": "8.2.1",
     "sass-embedded": "1.105.1",
